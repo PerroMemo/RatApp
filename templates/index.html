@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Bienvenido a {% endblock%}
+{% block content %}
+
+
+
+
+  <div class="relative h-screen ">
+    <!-- Contenido adicional en el bloque, superpuesto sobre el video si es necesario -->
+
+  
+    <div class="absolute inset-0 bg-black opacity-50">
+      <div class="p-10 lg:p-20 text-center">
+        <h1 class="text-3xl lg:text-6xl text-white">RatChat</h1>
+      </div>
+    </div>
+    
+    <!-- Video como fondo del bloque -->
+    <video autoplay loop muted class="w-full h-full object-cover ">
+      <!-- Ruta del video (reemplaza con la URL de tu video) -->
+      <source src="{% static 'videos/ratonBaile.mp4' %}" type="video/mp4">
+      Tu navegador no soporta el elemento de video.
+    </video>
+    
+    <!-- Contenido del bloque, superpuesto sobre el video -->
+    <div class="relative z-10 p-8 bg-amber-300">
+      <h1 class="text-4xl font-bold text-amber-950">Te amo Amor.</h1>
+      <p class="text-amber-950"></p>
+    </div>
+  </div>
+  {% endblock%}

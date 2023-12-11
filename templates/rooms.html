@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %} RatRooms | {% endblock%}
+{% block content %}
+
+<div class="p-10 lg:p-20 text-center">
+    <h1 class="text-3xl lg:text-6xl text-black">Rooms</h1>
+</div>
+
+<div class="w-full flex flex-warp items-center">
+    {% for room in rooms %}
+    <div class="w-full p-3">
+        <div class="p-4 bg-amber-300 shadow rounded-xl text-center">
+            <div class="mb-3 text-2xl font-semibold">
+                <img src="{{ room.rat }}" alt="">
+                {{ room.name }}
+
+                <a href="{% url 'room' room.slug %}" class="mt-2 px-5 py-3 block rounded-xl text-black bg-white hover:bg-stone-400">Entrar</a>
+            </div>
+        </div>
+    </div>
+    
+    {% endfor %}
+</div>
+
+
+
+
+  {% endblock %}
